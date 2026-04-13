@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>y1kk3love</title>
+  <title>김선민 블로그</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -159,7 +159,6 @@
     }
 
     .hero-desc p {
-      /* 여기에 한 줄 소개를 채워 넣으세요 */
       color: var(--muted);
     }
 
@@ -242,7 +241,6 @@
     .about-text p {
       color: var(--muted);
       margin-bottom: 16px;
-      /* 자기소개 내용을 채워 넣으세요 */
     }
 
     .about-stats {
@@ -321,43 +319,54 @@
     #projects .project-list {
       display: flex;
       flex-direction: column;
-      gap: 1px;
-      border: 1px solid var(--border);
-      background: var(--border);
     }
 
     .project-item {
-      background: var(--surface);
-      padding: 32px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
+      grid-template-columns: 52px 1fr auto;
+      gap: 32px;
       align-items: start;
-      transition: background 0.2s;
     }
 
-    .project-item:hover { background: var(--accent-dim); }
+    .project-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .project-number {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      padding-top: 6px;
+    }
 
     .project-name {
       font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 18px;
+      font-weight: 700;
+      font-size: clamp(20px, 3vw, 28px);
+      letter-spacing: -0.5px;
       color: var(--text);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    .project-item:hover .project-name {
+      color: var(--accent);
     }
 
     .project-desc {
       color: var(--muted);
       font-size: 13px;
       max-width: 480px;
-      /* 프로젝트 설명을 채워 넣으세요 */
+      margin-bottom: 20px;
     }
 
     .project-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 16px;
     }
 
     .tag {
@@ -373,17 +382,16 @@
     .project-link {
       color: var(--muted);
       text-decoration: none;
-      font-size: 12px;
-      border: 1px solid var(--border);
-      padding: 6px 14px;
-      border-radius: 2px;
-      white-space: nowrap;
-      transition: all 0.2s;
+      font-size: 22px;
+      line-height: 1;
+      padding-top: 2px;
+      transition: color 0.2s, transform 0.2s;
+      display: inline-block;
     }
 
     .project-link:hover {
       color: var(--accent);
-      border-color: var(--accent);
+      transform: translate(3px, -3px);
     }
 
     /* ── Contact ── */
@@ -401,7 +409,6 @@
     .contact-desc {
       color: var(--muted);
       line-height: 1.9;
-      /* 연락처 안내 문구를 채워 넣으세요 */
     }
 
     .contact-links {
@@ -453,7 +460,8 @@
       .nav-links { display: none; }
       #about .about-grid { grid-template-columns: 1fr; }
       .contact-inner { grid-template-columns: 1fr; }
-      .project-item { grid-template-columns: 1fr; }
+      .project-item { grid-template-columns: 1fr auto; }
+      .project-number { display: none; }
     }
   </style>
 </head>
@@ -462,7 +470,7 @@
   <!-- ── Navigation ── -->
   <nav>
     <div class="wrapper">
-      <a class="nav-logo" href="#hero">y1kk3love</a>
+      <a class="nav-logo" href="#hero">김선민</a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -477,10 +485,10 @@
     <div class="wrapper">
       <div class="hero-inner">
         <span class="hero-tag">Unity Client Developer</span>
-        <h1 class="hero-name"><!-- 이름 --></h1>
-        <p class="hero-role"><!-- 한 줄 직함 --></p>
+        <h1 class="hero-name">김선민</h1>
+        <p class="hero-role">Game Client Dev & XR Specialist</p>
         <div class="hero-desc">
-          <p><!-- 간단한 소개 --></p>
+          <p>4년차 Unity 클라이언트 개발자. 모바일 라이브 서비스부터 VR/XR 플랫폼 출시까지, 게임 스타트업에서 기술과 팀을 함께 리드합니다.</p>
         </div>
         <div class="hero-cta">
           <a href="#projects" class="btn btn-primary">Projects →</a>
@@ -494,28 +502,28 @@
   <section id="about">
     <div class="wrapper">
       <p class="section-label">About</p>
-      <h2 class="section-title"><!-- 섹션 제목 --></h2>
+      <h2 class="section-title">Who I Am</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p><!-- 자기소개 문단 1 --></p>
-          <p><!-- 자기소개 문단 2 --></p>
+          <p>Unity 클라이언트 개발자로 4년간 모바일 라이브 서비스 게임의 기획, 개발, 운영 전 과정을 경험했습니다. 빠르게 변하는 라이브 환경 속에서 안정적인 클라이언트 아키텍처를 설계하고 유지하는 데 강점이 있습니다.</p>
+          <p>VR/XR 플랫폼을 직접 출시하며 새로운 인터랙션 패러다임을 개척했고, 현재 게임 스타트업에서 임원으로 기술 방향성 수립과 팀 빌딩을 함께 이끌고 있습니다.</p>
         </div>
         <div class="about-stats">
           <div class="stat-item">
             <span class="stat-label">Experience</span>
-            <span class="stat-value"><!-- 경력 연차 --></span>
+            <span class="stat-value">4 YRS</span>
           </div>
           <div class="stat-item">
             <span class="stat-label">Platform</span>
-            <span class="stat-value"><!-- 플랫폼 --></span>
+            <span class="stat-value">VR / XR</span>
           </div>
           <div class="stat-item">
             <span class="stat-label">Specialty</span>
-            <span class="stat-value"><!-- 전문 분야 --></span>
+            <span class="stat-value">Unity</span>
           </div>
           <div class="stat-item">
             <span class="stat-label">Status</span>
-            <span class="stat-value"><!-- 현재 상태 --></span>
+            <span class="stat-value">Open</span>
           </div>
         </div>
       </div>
@@ -526,38 +534,42 @@
   <section id="skills">
     <div class="wrapper">
       <p class="section-label">Skills</p>
-      <h2 class="section-title"><!-- 섹션 제목 --></h2>
+      <h2 class="section-title">Tech Stack</h2>
       <div class="skills-grid">
 
         <div class="skill-card">
           <p class="skill-category">Engine</p>
           <ul class="skill-list">
-            <li><!-- 스킬 --></li>
-            <li><!-- 스킬 --></li>
+            <li>Unity</li>
+            <li>DOTS / ECS</li>
+            <li>Shader Graph</li>
           </ul>
         </div>
 
         <div class="skill-card">
           <p class="skill-category">Platform</p>
           <ul class="skill-list">
-            <li><!-- 스킬 --></li>
-            <li><!-- 스킬 --></li>
+            <li>Meta Quest</li>
+            <li>PICO 4</li>
+            <li>iOS / Android</li>
           </ul>
         </div>
 
         <div class="skill-card">
           <p class="skill-category">Language</p>
           <ul class="skill-list">
-            <li><!-- 스킬 --></li>
-            <li><!-- 스킬 --></li>
+            <li>C#</li>
+            <li>HLSL</li>
+            <li>Python</li>
           </ul>
         </div>
 
         <div class="skill-card">
           <p class="skill-category">Tools</p>
           <ul class="skill-list">
-            <li><!-- 스킬 --></li>
-            <li><!-- 스킬 --></li>
+            <li>Git / GitHub</li>
+            <li>Jira / Notion</li>
+            <li>Rider / VS Code</li>
           </ul>
         </div>
 
@@ -569,31 +581,37 @@
   <section id="projects">
     <div class="wrapper">
       <p class="section-label">Projects</p>
-      <h2 class="section-title"><!-- 섹션 제목 --></h2>
+      <h2 class="section-title">Selected Work</h2>
       <div class="project-list">
 
         <div class="project-item">
+          <span class="project-number">01</span>
           <div>
-            <p class="project-name"><!-- 프로젝트명 --></p>
-            <p class="project-desc"><!-- 프로젝트 설명 --></p>
+            <p class="project-name">VR/XR Platform</p>
+            <p class="project-desc">Meta Quest & PICO 타겟 VR/XR 플랫폼 출시. 멀티플랫폼 빌드 파이프라인 및 XR 인터랙션 시스템을 설계·구현했습니다.</p>
             <div class="project-tags">
-              <span class="tag"><!-- 태그 --></span>
-              <span class="tag"><!-- 태그 --></span>
+              <span class="tag">Unity</span>
+              <span class="tag">C#</span>
+              <span class="tag">XR</span>
+              <span class="tag">Meta Quest</span>
             </div>
           </div>
-          <a href="#" class="project-link">View →</a>
+          <a href="#" class="project-link">↗</a>
         </div>
 
         <div class="project-item">
+          <span class="project-number">02</span>
           <div>
-            <p class="project-name"><!-- 프로젝트명 --></p>
-            <p class="project-desc"><!-- 프로젝트 설명 --></p>
+            <p class="project-name">Live Service Mobile Game</p>
+            <p class="project-desc">라이브 서비스 모바일 게임 클라이언트 개발. 실시간 콘텐츠 업데이트 시스템, 서버 동기화, 퍼포먼스 최적화를 담당했습니다.</p>
             <div class="project-tags">
-              <span class="tag"><!-- 태그 --></span>
-              <span class="tag"><!-- 태그 --></span>
+              <span class="tag">Unity</span>
+              <span class="tag">C#</span>
+              <span class="tag">Mobile</span>
+              <span class="tag">Live Service</span>
             </div>
           </div>
-          <a href="#" class="project-link">View →</a>
+          <a href="#" class="project-link">↗</a>
         </div>
 
       </div>
@@ -604,21 +622,21 @@
   <section id="contact">
     <div class="wrapper">
       <p class="section-label">Contact</p>
-      <h2 class="section-title"><!-- 섹션 제목 --></h2>
+      <h2 class="section-title">Get In Touch</h2>
       <div class="contact-inner">
-        <p class="contact-desc"><!-- 연락처 안내 문구 --></p>
+        <p class="contact-desc">새로운 프로젝트 협업이나 기술적인 제안은 언제든 환영합니다. 아래 채널로 편하게 연락 주세요.</p>
         <div class="contact-links">
-          <a href="mailto:" class="contact-link-item">
+          <a href="mailto:y1kk3love@naver.com" class="contact-link-item">
             <span class="contact-link-label">Email</span>
-            <span class="contact-link-value"><!-- 이메일 --></span>
+            <span class="contact-link-value">y1kk3love@naver.com</span>
           </a>
           <a href="https://github.com/y1kk3love" target="_blank" class="contact-link-item">
             <span class="contact-link-label">GitHub</span>
             <span class="contact-link-value">y1kk3love</span>
           </a>
-          <a href="#" class="contact-link-item">
+          <a href="https://www.linkedin.com/in/sunmim/" target="_blank" class="contact-link-item">
             <span class="contact-link-label">LinkedIn</span>
-            <span class="contact-link-value"><!-- 링크드인 --></span>
+            <span class="contact-link-value">sunmim</span>
           </a>
         </div>
       </div>
@@ -628,7 +646,7 @@
   <!-- ── Footer ── -->
   <footer>
     <div class="wrapper">
-      <span>© 2025 y1kk3love</span>
+      <span>© 2025 김선민</span>
       <span>Built with HTML & CSS</span>
     </div>
   </footer>

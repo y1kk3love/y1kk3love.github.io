@@ -379,6 +379,29 @@
       border-radius: 2px;
     }
 
+    .project-platforms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .platform-link {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .platform-link:hover {
+      color: var(--accent);
+      border-color: rgba(200, 240, 96, 0.4);
+    }
+
     .project-link {
       color: var(--muted);
       text-decoration: none;
@@ -599,8 +622,13 @@
               <span class="tag">XR</span>
               <span class="tag">C#</span>
             </div>
+            <div class="project-platforms">
+              <a href="https://www.vivariumxr.com/" target="_blank" class="platform-link">Website ↗</a>
+              <a href="https://www.meta.com/ko-kr/experiences/vivarium/8899809286723631/" target="_blank" class="platform-link">Meta Store ↗</a>
+              <a href="https://store-global.picoxr.com/kr/detail/1/7374645554388664325" target="_blank" class="platform-link">PICO Store ↗</a>
+            </div>
           </div>
-          <a href="#" class="project-link">↗</a>
+          <a href="https://www.vivariumxr.com/" target="_blank" class="project-link">↗</a>
         </div>
 
         <div class="project-item">
@@ -614,8 +642,13 @@
               <span class="tag">Hololens</span>
               <span class="tag">C#</span>
             </div>
+            <div class="project-platforms">
+              <a href="https://www.twin.world/ko" target="_blank" class="platform-link">Website ↗</a>
+              <a href="https://www.meta.com/ko-kr/experiences/twinworld/6464922583573383/" target="_blank" class="platform-link">Meta Store ↗</a>
+              <a href="https://apps.microsoft.com/detail/9ncbr51c5m67?hl=ko-kr&gl=KR" target="_blank" class="platform-link">MS Store ↗</a>
+            </div>
           </div>
-          <a href="#" class="project-link">↗</a>
+          <a href="https://www.twin.world/ko" target="_blank" class="project-link">↗</a>
         </div>
 
         <div class="project-item">

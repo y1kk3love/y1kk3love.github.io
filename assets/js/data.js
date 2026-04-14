@@ -39,6 +39,27 @@ const PROJECTS = {
     tags: ['Unity', 'META XR SDK', 'MR', 'C#', 'Hand Tracking'],
     images: [],
     platforms: []
+  },
+  kiro: {
+    title: 'ARUCO 마커 인식',
+    desc: 'OpenCV ARUCO 마커 기반 부품 위치 인식 시스템. C++ DLL로 구현하여 Unity 3D 연동. 8×8 특징 추출 + 4방향 회전 비교 매칭. 한국로봇융합연구원(KIRO) 납품.',
+    tags: ['Unity', 'C++ DLL', 'OpenCV', 'Python', 'scikit-learn'],
+    images: [],
+    platforms: []
+  },
+  lidar: {
+    title: '3D LiDAR 시뮬레이터',
+    desc: 'Unity 3D와 C++ DLL로 구현한 저비용 3D LiDAR 시뮬레이터. LPP/GPP 알고리즘으로 포인트 클라우드 분류 및 자율주행 시뮬레이션. KSCG KCI 등재 논문 (Vol.35 No.1).',
+    tags: ['Unity', 'C++ DLL', 'LiDAR', 'Point Cloud', 'C#'],
+    images: [],
+    platforms: []
+  },
+  omok: {
+    title: 'Omok AI',
+    desc: '메모리스틱 + 유전 알고리즘 기반 오목 AI. 특정 위치 4방향 연속 돌 수를 바이너리 탐색하여 최적 수 결정. C++ / OpenGL 2D 렌더링. 한국정보처리학회 2022 ASK 추계학술발표회 발표.',
+    tags: ['C++', 'OpenGL', 'AI', 'Genetic Algorithm', 'Python'],
+    images: [],
+    platforms: []
   }
 };
 

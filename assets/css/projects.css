@@ -1,9 +1,68 @@
-#projects .project-cards {
+/* ── Slider ── */
+.projects-slider {
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slider-page {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  min-width: 100%;
+  flex-shrink: 0;
+  align-items: start;
 }
 
+.slider-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.slider-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  color: var(--text);
+  font-size: 17px;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.slider-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.slider-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.slider-count {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  min-width: 52px;
+  text-align: center;
+}
+
+/* ── Project Card ── */
 .project-card {
   background: rgba(255, 255, 255, 0.68);
   backdrop-filter: blur(12px);
@@ -32,12 +91,10 @@
   overflow: hidden;
 }
 
-.project-thumb.has-image::after {
-  display: none;
-}
+.project-thumb.has-image::after { display: none; }
 
 .project-thumb::after {
-  content: 'thumbnail';
+  content: 'preview';
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -92,4 +149,9 @@
   padding: 3px 8px;
   border-radius: 20px;
   background: var(--accent-dim);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .slider-page { grid-template-columns: 1fr; }
 }

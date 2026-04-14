@@ -97,12 +97,17 @@ section {
 }
 
 .section-label {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 400;
+  margin-bottom: 16px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.section-label .ko {
+  color: var(--accent);
+  margin-left: 6px;
 }
 
 .section-title {

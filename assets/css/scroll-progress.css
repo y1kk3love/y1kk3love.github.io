@@ -1,0 +1,23 @@
+.scroll-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--accent);
+  z-index: 500;
+  pointer-events: none;
+  transition: width 0.08s linear;
+}
+
+.scroll-indicator {
+  position: fixed;
+  bottom: 28px;
+  right: 36px;
+  z-index: 100;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  pointer-events: none;
+  opacity: 0.65;
+}

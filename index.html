@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 
   <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/scroll-progress.css" />
   <link rel="stylesheet" href="assets/css/nav.css" />
   <link rel="stylesheet" href="assets/css/hero.css" />
   <link rel="stylesheet" href="assets/css/about.css" />
@@ -31,16 +32,20 @@
     <div class="blob blob-3"></div>
   </div>
 
+  <!-- ── Scroll Progress ── -->
+  <div class="scroll-line" id="scrollLine"></div>
+  <div class="scroll-indicator" id="scrollIndicator">— 0%</div>
+
   <!-- ── Navigation ── -->
   <nav>
     <div class="wrapper">
       <a class="nav-logo" href="#hero">김선민<span>.</span></a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Career</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#experience">career</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
     </div>
   </nav>
@@ -67,7 +72,7 @@
   <!-- ── About ── -->
   <section id="about">
     <div class="wrapper">
-      <p class="section-label reveal">About</p>
+      <p class="section-label reveal">/about <span class="ko">어바웃</span></p>
       <h2 class="section-title reveal">Who I Am</h2>
       <div class="about-grid reveal">
         <div class="about-text">
@@ -99,8 +104,8 @@
   <!-- ── Career ── -->
   <section id="experience">
     <div class="wrapper">
-      <p class="section-label reveal">Experience</p>
-      <h2 class="section-title reveal">Career</h2>
+      <p class="section-label reveal">/career <span class="ko">경력</span></p>
+      <h2 class="section-title reveal">Experience</h2>
       <div class="timeline">
 
         <div class="timeline-item reveal">
@@ -150,7 +155,7 @@
   <!-- ── Skills ── -->
   <section id="skills">
     <div class="wrapper">
-      <p class="section-label reveal">Skills</p>
+      <p class="section-label reveal">/skills <span class="ko">스킬</span></p>
       <h2 class="section-title reveal">Tech Stack</h2>
       <div class="skills-grid">
 
@@ -217,61 +222,119 @@
   <!-- ── Projects ── -->
   <section id="projects">
     <div class="wrapper">
-      <p class="section-label reveal">Projects</p>
+      <p class="section-label reveal">/projects <span class="ko">프로젝트</span></p>
       <h2 class="section-title reveal">Selected Work</h2>
-      <div class="project-cards">
 
-        <div class="project-card reveal" data-project="vivarium" role="button" tabindex="0" aria-label="Vivarium 프로젝트 상세 보기">
-          <div class="project-thumb"></div>
-          <div class="project-card-body">
-            <p class="project-card-num">01</p>
-            <p class="project-card-name">Vivarium</p>
-            <p class="project-card-desc">XR 자연 생태계 체험 게임. Meta Store 4.6/5 · PICO Store 유료 1위 · Webby Awards 수상.</p>
-            <div class="project-card-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">META SDK</span>
-              <span class="tag">PICO SDK</span>
-              <span class="tag">XR</span>
+      <div class="projects-slider">
+        <div class="slider-track" id="sliderTrack">
+
+          <!-- Page 1: Commercial -->
+          <div class="slider-page">
+            <div class="project-card reveal" data-project="vivarium" role="button" tabindex="0" aria-label="Vivarium 프로젝트 상세 보기">
+              <div class="project-thumb"></div>
+              <div class="project-card-body">
+                <p class="project-card-num">01</p>
+                <p class="project-card-name">Vivarium</p>
+                <p class="project-card-desc">XR 자연 생태계 체험 게임. Meta 4.6★ · PICO 유료 1위 · Webby Awards.</p>
+                <div class="project-card-tags">
+                  <span class="tag">Unity</span>
+                  <span class="tag">META SDK</span>
+                  <span class="tag">PICO SDK</span>
+                  <span class="tag">XR</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card reveal" data-project="twinworld" role="button" tabindex="0" aria-label="Twinworld 프로젝트 상세 보기">
+              <div class="project-thumb"></div>
+              <div class="project-card-body">
+                <p class="project-card-num">02</p>
+                <p class="project-card-name">Twinworld</p>
+                <p class="project-card-desc">XR 소셜 메타버스 플랫폼. 3D Recording, GLB Import/Export, 아바타 IK 동기화.</p>
+                <div class="project-card-tags">
+                  <span class="tag">Unity</span>
+                  <span class="tag">Photon Fusion</span>
+                  <span class="tag">Hololens 2</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card reveal" data-project="dopamino" role="button" tabindex="0" aria-label="Dopamino 프로젝트 상세 보기">
+              <div class="project-thumb"></div>
+              <div class="project-card-body">
+                <p class="project-card-num">03</p>
+                <p class="project-card-name">Dopamino</p>
+                <p class="project-card-desc">META XR SDK 기반 MR 도미노 게임. 핸드 트래킹 인터랙션 구현.</p>
+                <div class="project-card-tags">
+                  <span class="tag">Unity</span>
+                  <span class="tag">META XR SDK</span>
+                  <span class="tag">MR</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="project-card reveal" data-project="twinworld" role="button" tabindex="0" aria-label="Twinworld 프로젝트 상세 보기">
-          <div class="project-thumb"></div>
-          <div class="project-card-body">
-            <p class="project-card-num">02</p>
-            <p class="project-card-name">Twinworld</p>
-            <p class="project-card-desc">XR 소셜 메타버스 플랫폼. 3D Recording, GLB Import/Export, 아바타 IK 동기화.</p>
-            <div class="project-card-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">Photon Fusion</span>
-              <span class="tag">Hololens 2</span>
+          <!-- Page 2: Research -->
+          <div class="slider-page">
+            <div class="project-card reveal" data-project="kiro" role="button" tabindex="0" aria-label="ARUCO 마커 인식 프로젝트 상세 보기">
+              <div class="project-thumb"></div>
+              <div class="project-card-body">
+                <p class="project-card-num">04</p>
+                <p class="project-card-name">ARUCO 마커 인식</p>
+                <p class="project-card-desc">OpenCV 기반 부품 위치 인식 시스템. C++ DLL Unity 연동. KIRO 납품.</p>
+                <div class="project-card-tags">
+                  <span class="tag">C++ DLL</span>
+                  <span class="tag">OpenCV</span>
+                  <span class="tag">Unity</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card reveal" data-project="lidar" role="button" tabindex="0" aria-label="3D LiDAR 시뮬레이터 프로젝트 상세 보기">
+              <div class="project-thumb"></div>
+              <div class="project-card-body">
+                <p class="project-card-num">05</p>
+                <p class="project-card-name">3D LiDAR 시뮬레이터</p>
+                <p class="project-card-desc">저비용 3D LiDAR 자율주행 시뮬레이터. LPP/GPP 포인트 클라우드 분류. KCI 등재.</p>
+                <div class="project-card-tags">
+                  <span class="tag">Unity</span>
+                  <span class="tag">C++ DLL</span>
+                  <span class="tag">LiDAR</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card reveal" data-project="omok" role="button" tabindex="0" aria-label="Omok AI 프로젝트 상세 보기">
+              <div class="project-thumb"></div>
+              <div class="project-card-body">
+                <p class="project-card-num">06</p>
+                <p class="project-card-name">Omok AI</p>
+                <p class="project-card-desc">메모리스틱 + 유전 알고리즘 오목 AI. C++ / OpenGL. 한국정보처리학회 발표.</p>
+                <div class="project-card-tags">
+                  <span class="tag">C++</span>
+                  <span class="tag">OpenGL</span>
+                  <span class="tag">AI</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="project-card reveal" data-project="dopamino" role="button" tabindex="0" aria-label="Dopamino 프로젝트 상세 보기">
-          <div class="project-thumb"></div>
-          <div class="project-card-body">
-            <p class="project-card-num">03</p>
-            <p class="project-card-name">Dopamino</p>
-            <p class="project-card-desc">META XR SDK 기반 MR 도미노 게임. 핸드 트래킹 인터랙션 구현.</p>
-            <div class="project-card-tags">
-              <span class="tag">Unity</span>
-              <span class="tag">META XR SDK</span>
-              <span class="tag">MR</span>
-            </div>
-          </div>
-        </div>
+        </div><!-- /slider-track -->
 
+        <div class="slider-nav">
+          <button class="slider-btn" id="sliderPrev" aria-label="이전">←</button>
+          <span class="slider-count" id="sliderCount">01 / 02</span>
+          <button class="slider-btn" id="sliderNext" aria-label="다음">→</button>
+        </div>
       </div>
+
     </div>
   </section>
 
   <!-- ── Awards ── -->
   <section id="awards">
     <div class="wrapper">
-      <p class="section-label reveal">Recognition</p>
+      <p class="section-label reveal">/recognition <span class="ko">수상</span></p>
       <h2 class="section-title reveal">Awards & Achievements</h2>
       <div class="awards-grid reveal">
 
@@ -306,7 +369,7 @@
   <!-- ── Contact ── -->
   <section id="contact">
     <div class="wrapper">
-      <p class="section-label reveal">Contact</p>
+      <p class="section-label reveal">/contact <span class="ko">연락</span></p>
       <h2 class="section-title reveal">Get In Touch</h2>
       <div class="contact-inner reveal">
         <p class="contact-desc">새로운 프로젝트 협업이나 기술적인 제안은 언제든 환영합니다. 아래 채널로 편하게 연락 주세요.</p>
@@ -358,6 +421,8 @@
   <script src="assets/js/typing.js"></script>
   <script src="assets/js/scroll-reveal.js"></script>
   <script src="assets/js/count-up.js"></script>
+  <script src="assets/js/scroll-progress.js"></script>
+  <script src="assets/js/slider.js"></script>
 
 </body>
 </html>

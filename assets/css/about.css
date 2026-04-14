@@ -1,56 +1,57 @@
+/* ── About Section ── */
 #about {
   padding-top: 160px;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
 }
 
 .about-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
 }
 
-.about-left {}
-
-.about-right {
+/* ── Background Carousel ── */
+.about-bg-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 440px;
   overflow: hidden;
+  pointer-events: none;
 }
 
-.carousel-wrap {
-  overflow: hidden;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+/* 좌측 텍스트 영역은 배경색으로 가리고, 하단은 페이드 아웃 */
+.about-bg-carousel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, var(--bg) 0%, var(--bg) 28%, transparent 52%),
+    linear-gradient(to bottom, transparent 0%, transparent 62%, var(--bg) 100%);
+  z-index: 1;
 }
 
-.carousel-row {
+.about-bg-track {
   display: flex;
   gap: 10px;
   width: max-content;
+  height: 440px;
+  animation: scrollLeft 30s linear infinite;
   will-change: transform;
 }
 
-.carousel-row:hover {
-  animation-play-state: paused;
-}
-
-.row-left  { animation: scrollLeft  24s linear infinite; }
-.row-right { animation: scrollRight 30s linear infinite; }
-
-.carousel-row img {
-  width: 200px;
-  height: 150px;
+.about-bg-track img {
+  height: 440px;
+  width: 300px;
   object-fit: cover;
-  border-radius: 8px;
-  flex-shrink: 0;
   display: block;
-  /* brightness & scale은 JS가 제어 */
+  flex-shrink: 0;
+  opacity: 0.55;
 }
 
 @keyframes scrollLeft {
@@ -58,16 +59,7 @@
   100% { transform: translateX(-50%); }
 }
 
-@keyframes scrollRight {
-  0%   { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
-@media (max-width: 768px) {
-  .about-inner { grid-template-columns: 1fr; }
-  .about-right { display: none; }
-}
-
+/* ── Text Content ── */
 .about-label {
   font-size: 11px;
   letter-spacing: 0.2em;
@@ -126,3 +118,15 @@
 .about-name  { opacity: 0; animation: fadeUp 0.7s ease 0.2s forwards; }
 .about-role  { opacity: 0; animation: fadeUp 0.6s ease 0.35s forwards; }
 .about-bio   { opacity: 0; animation: fadeUp 0.6s ease 0.45s forwards; }
+
+@media (max-width: 768px) {
+  .about-bg-carousel {
+    height: 320px;
+    opacity: 0.7;
+  }
+  .about-bg-carousel::after {
+    background:
+      linear-gradient(to right, var(--bg) 0%, var(--bg) 10%, transparent 50%),
+      linear-gradient(to bottom, transparent 0%, transparent 60%, var(--bg) 100%);
+  }
+}

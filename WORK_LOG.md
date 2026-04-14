@@ -4,6 +4,10 @@
 
 ---
 
+### [017] 2026-04-14 — 오목·KIRO 이미지 순서 변경
+- 오목: omok-1↔omok-2 순서 교체 (썸네일 omok-2로)
+- KIRO: kiro-report 맨 앞으로 이동 (썸네일 변경)
+
 ### [016] 2026-04-14 — 비바리움·트윈월드 썸네일 메인 이미지로 교체
 - vivarium thumb: vivarium-1.jpg → vivarium-main.png
 - twinworld thumb: twinworld-1.webp → twinworld-main.png

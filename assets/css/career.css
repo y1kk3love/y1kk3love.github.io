@@ -1,116 +1,140 @@
-.timeline {
-  position: relative;
-  padding-left: 28px;
+#career {
+  border-top: 1px solid var(--border);
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  bottom: 10px;
-  width: 1px;
-  background: var(--border);
-}
-
-.timeline-item {
-  position: relative;
-  padding: 0 0 52px 32px;
-}
-
-.timeline-item:last-child {
-  padding-bottom: 0;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -6px;
-  top: 9px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--surface);
-  border: 2px solid var(--border);
-  transition: border-color 0.3s;
-}
-
-.timeline-item:first-child::before {
-  border-color: var(--accent);
-  background: var(--accent-dim);
-}
-
-.timeline-meta {
+.career-heading {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 400;
+  margin-bottom: 72px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
+  gap: 14px;
 }
 
-.timeline-period {
+.career-heading::before {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+
+/* ── 각 경력 항목 ── */
+.career-item {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 48px;
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+}
+
+.career-item:first-child {
+  border-top: none;
+}
+
+/* 왼쪽: 기간 */
+.career-period {
+  padding-top: 4px;
+}
+
+.period-dates {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.period-duration {
+  display: block;
   font-size: 12px;
   color: var(--muted);
-  letter-spacing: 0.04em;
-  font-family: var(--font-body);
+  opacity: 0.6;
 }
 
-.timeline-badge {
+.period-badge {
+  display: inline-block;
+  margin-top: 10px;
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
   padding: 3px 10px;
   border-radius: 20px;
-  font-weight: 500;
+  opacity: 0.8;
 }
 
-.timeline-badge.current {
-  background: var(--accent-dim);
-  color: var(--accent);
-  border: 1px solid var(--accent-border);
-}
-
-.timeline-duration {
-  font-size: 11px;
-  color: var(--muted);
-}
-
-.timeline-company {
-  font-family: var(--font-display);
-  font-weight: 700;
+/* 오른쪽: 내용 */
+.career-company {
   font-size: 20px;
-  letter-spacing: -0.3px;
+  font-weight: 600;
   color: var(--text);
+  letter-spacing: -0.3px;
   margin-bottom: 4px;
 }
 
-.timeline-role {
+.career-role {
   font-size: 13px;
-  color: var(--accent);
-  margin-bottom: 14px;
-}
-
-.timeline-desc {
   color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.career-project {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px 28px;
+}
+
+.project-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.project-desc {
   font-size: 13px;
-  line-height: 1.85;
+  color: var(--muted);
   margin-bottom: 16px;
-  max-width: 600px;
 }
 
-.timeline-tags {
+.project-achievements {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.tl-tag {
-  font-size: 10px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--gold);
-  border: 1px solid rgba(232, 168, 124, 0.35);
-  padding: 3px 10px;
-  border-radius: 20px;
-  background: var(--gold-dim);
+.project-achievements li {
+  font-size: 13px;
+  color: var(--muted);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.project-achievements li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 11px;
+}
+
+/* ── 스크롤 reveal 스태거 ── */
+.career-item:nth-child(1) { transition-delay: 0s; }
+.career-item:nth-child(2) { transition-delay: 0.1s; }
+.career-item:nth-child(3) { transition-delay: 0.2s; }
+
+@media (max-width: 768px) {
+  .career-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }

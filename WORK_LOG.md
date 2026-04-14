@@ -4,6 +4,13 @@
 
 ---
 
+### [004] 2026-04-14 — Project 섹션 추가
+- `project.css`: 4열 스와이프 그리드, 카드 스타일, 모달 오버레이 (갤러리+정보 패널)
+- `project.js`: 6개 프로젝트 데이터, 그리드 렌더, 캐러셀 화살표, 모달 (이미지/영상 슬라이더 + 키보드/터치 스와이프)
+- 이미지 추가: dopamino(2장), kiro(5장), vivarium extras(award/rank/rating)
+- 영상 추가: vivarium.mp4, twinworld.mp4
+- `scroll-reveal.js`: window._revealObserver 노출 (동적 요소 등록용)
+
 ### [003] 2026-04-14 — UI 다수 수정
 - `nav.css`: 상단 바 불투명 처리 (background: var(--bg) + border-bottom)
 - `index.html`: 네비게이션에 Career 메뉴 추가

@@ -28,4 +28,10 @@
   #about .about-grid { grid-template-columns: 1fr; }
   .contact-inner { grid-template-columns: 1fr; }
   #projects .project-cards { grid-template-columns: 1fr; }
+  .awards-grid { grid-template-columns: 1fr 1fr; }
+  .timeline { padding-left: 16px; }
+}
+
+@media (max-width: 480px) {
+  .awards-grid { grid-template-columns: 1fr; }
 }

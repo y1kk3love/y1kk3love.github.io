@@ -17,20 +17,22 @@
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 10px;
   overflow: hidden;
 }
 
 .stat-item {
   padding: 28px 24px;
-  background: var(--surface);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   gap: 6px;
   transition: background 0.2s;
 }
 
-.stat-item:hover { background: var(--accent-dim); }
+.stat-item:hover { background: rgba(196, 103, 58, 0.06); }
 
 .stat-label {
   color: var(--muted);

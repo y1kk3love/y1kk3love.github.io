@@ -9,9 +9,34 @@ function openProject(key) {
   document.getElementById('panelTitle').textContent = p.title;
   document.getElementById('panelDesc').textContent  = p.desc;
 
+  // Tags
   document.getElementById('panelTags').innerHTML =
     p.tags.map(t => `<span class="tag">${t}</span>`).join('');
 
+  // Gallery
+  const galleryEl = document.getElementById('panelGallery');
+  if (p.images && p.images.length > 0) {
+    galleryEl.style.display = '';
+    galleryEl.innerHTML = `
+      <img id="galleryMain" class="gallery-main-img" src="${p.images[0]}" alt="${p.title}">
+      ${p.images.length > 1 ? `<div class="gallery-thumbs">${
+        p.images.map((img, i) =>
+          `<img class="gallery-thumb${i === 0 ? ' active' : ''}" src="${img}" alt="" data-idx="${i}">`
+        ).join('')
+      }</div>` : ''}
+    `;
+    galleryEl.querySelectorAll('.gallery-thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        document.getElementById('galleryMain').src = thumb.src;
+        galleryEl.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
+  } else {
+    galleryEl.innerHTML = '<div class="panel-no-thumb"></div>';
+  }
+
+  // Platforms
   const platEl = document.getElementById('panelPlatforms');
   if (p.platforms.length) {
     platEl.style.display = '';

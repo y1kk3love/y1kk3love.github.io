@@ -2,9 +2,10 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 200;
-  border-bottom: 1px solid var(--border);
-  background: rgba(248, 247, 244, 0.88);
-  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(229, 223, 216, 0.7);
+  background: rgba(250, 248, 245, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 nav .wrapper {
@@ -18,9 +19,13 @@ nav .wrapper {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 18px;
-  color: var(--accent);
+  color: var(--text);
   text-decoration: none;
   letter-spacing: -0.5px;
+}
+
+.nav-logo span {
+  color: var(--accent);
 }
 
 .nav-links {

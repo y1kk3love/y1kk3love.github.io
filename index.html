@@ -12,8 +12,10 @@
   <link rel="stylesheet" href="assets/css/nav.css" />
   <link rel="stylesheet" href="assets/css/hero.css" />
   <link rel="stylesheet" href="assets/css/about.css" />
+  <link rel="stylesheet" href="assets/css/career.css" />
   <link rel="stylesheet" href="assets/css/skills.css" />
   <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/awards.css" />
   <link rel="stylesheet" href="assets/css/overlay.css" />
   <link rel="stylesheet" href="assets/css/contact.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
@@ -21,12 +23,20 @@
 </head>
 <body>
 
+  <!-- ── Soft Blobs ── -->
+  <div class="blob-field" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
   <!-- ── Navigation ── -->
   <nav>
     <div class="wrapper">
-      <a class="nav-logo" href="#hero">김선민</a>
+      <a class="nav-logo" href="#hero">김선민<span>.</span></a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#experience">Career</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -38,7 +48,7 @@
   <section id="hero">
     <div class="wrapper">
       <div class="hero-inner">
-        <span class="hero-tag">Unity Client Developer</span>
+        <span class="hero-tag">Unity Client Developer · 4 Years</span>
         <h1 class="hero-name">김선민</h1>
         <p class="hero-role"><span id="typing-text"></span><span class="cursor"></span></p>
         <p class="hero-desc">
@@ -73,14 +83,65 @@
             <span class="stat-value" data-count="2" data-suffix="">0</span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Awards</span>
-            <span class="stat-value" data-count="1" data-suffix="">0</span>
+            <span class="stat-label">Meta Store</span>
+            <span class="stat-value" style="font-size:22px; letter-spacing:0;">4.6 ★</span>
           </div>
           <div class="stat-item">
             <span class="stat-label">Status</span>
             <span class="stat-value" style="font-size:18px; letter-spacing:0;">Open</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Career ── -->
+  <section id="experience">
+    <div class="wrapper">
+      <p class="section-label reveal">Experience</p>
+      <h2 class="section-title reveal">Career</h2>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-period">2025.11 — Present</span>
+            <span class="timeline-badge current">재직중</span>
+          </div>
+          <p class="timeline-company">(주) 더블미스튜디오X</p>
+          <p class="timeline-role">Unity 클라이언트 개발자</p>
+          <p class="timeline-desc">META XR SDK 기반 VR 게임 개발. MR 기능(공간 인식·패스스루·마커 인식·스캐닝) 구현. VR UI/UX 설계 및 XRI 인터랙션 시스템 구축.</p>
+          <div class="timeline-tags">
+            <span class="tl-tag">Meta Horizon Start Dev Competition</span>
+            <span class="tl-tag">Dopamino (MR)</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-period">2024.04 — 2025.09</span>
+            <span class="timeline-duration">1년 6개월</span>
+          </div>
+          <p class="timeline-company">(주) 더블미 StudioX</p>
+          <p class="timeline-role">Unity 클라이언트 개발자</p>
+          <p class="timeline-desc">Vivarium XR 자연 생태계 게임 전 주기 개발. META·PICO 멀티플랫폼 대응, GPU Compute Shader 최적화, CI/CD 구축, REST API 클라이언트 구현.</p>
+          <div class="timeline-tags">
+            <span class="tl-tag">Webby Awards 2025</span>
+            <span class="tl-tag">Auggie Awards Finalist</span>
+            <span class="tl-tag">PICO Store 유료 1위</span>
+            <span class="tl-tag">Meta Store 4.6★</span>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <span class="timeline-period">2022.08 — 2024.01</span>
+            <span class="timeline-duration">1년 6개월</span>
+          </div>
+          <p class="timeline-company">(주) 더블미 TwinWorld</p>
+          <p class="timeline-role">VR 클라이언트 개발자</p>
+          <p class="timeline-desc">TwinWorld XR 소셜 메타버스 플랫폼 개발. 3D Recording 시스템, GLB 런타임 Import/Export, Photon Fusion 아바타 IK·BlendShape 네트워크 동기화, Voxel 에디터 구현. Hololens 2 포팅.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -97,7 +158,7 @@
           <ul class="skill-list">
             <li>Unity</li>
             <li>URP / Shader Graph</li>
-            <li>Compute Shader</li>
+            <li>Compute Shader / HLSL</li>
             <li>GPU Instancing</li>
           </ul>
         </div>
@@ -116,18 +177,35 @@
           <p class="skill-category">Language</p>
           <ul class="skill-list">
             <li>C# / C++</li>
-            <li>HLSL</li>
             <li>Python</li>
+            <li>HLSL</li>
+          </ul>
+        </div>
+
+        <div class="skill-card reveal">
+          <p class="skill-category">Network</p>
+          <ul class="skill-list">
+            <li>Photon Fusion / PUN</li>
+            <li>REST API / Webhook</li>
+            <li>UniTask / UniRx</li>
+          </ul>
+        </div>
+
+        <div class="skill-card reveal">
+          <p class="skill-category">Optimization</p>
+          <ul class="skill-list">
+            <li>Addressable</li>
+            <li>Object Pooling</li>
+            <li>Obi Physics</li>
           </ul>
         </div>
 
         <div class="skill-card reveal">
           <p class="skill-category">Tools</p>
           <ul class="skill-list">
-            <li>Photon Fusion / PUN</li>
-            <li>UniTask / UniRx</li>
             <li>GitHub Actions CI/CD</li>
-            <li>Addressable / GLTFast</li>
+            <li>Unity Editor 커스텀 툴</li>
+            <li>GLTFast / DocFX</li>
           </ul>
         </div>
 
@@ -162,11 +240,11 @@
           <div class="project-card-body">
             <p class="project-card-num">02</p>
             <p class="project-card-name">Twinworld</p>
-            <p class="project-card-desc">XR 소셜 게임 플랫폼. 3D Recording, GLB Import/Export, 아바타 IK 동기화.</p>
+            <p class="project-card-desc">XR 소셜 메타버스 플랫폼. 3D Recording, GLB Import/Export, 아바타 IK 동기화.</p>
             <div class="project-card-tags">
               <span class="tag">Unity</span>
               <span class="tag">Photon Fusion</span>
-              <span class="tag">Hololens</span>
+              <span class="tag">Hololens 2</span>
             </div>
           </div>
         </div>
@@ -183,6 +261,41 @@
               <span class="tag">MR</span>
             </div>
           </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Awards ── -->
+  <section id="awards">
+    <div class="wrapper">
+      <p class="section-label reveal">Recognition</p>
+      <h2 class="section-title reveal">Awards & Achievements</h2>
+      <div class="awards-grid reveal">
+
+        <div class="award-item">
+          <p class="award-year">2025</p>
+          <p class="award-title">Webby Awards</p>
+          <p class="award-desc">Official Honoree<br>Best VR Headset Experience<br>AI, Immersive &amp; Games 부문</p>
+        </div>
+
+        <div class="award-item">
+          <p class="award-year">2025</p>
+          <p class="award-title">Auggie Awards</p>
+          <p class="award-desc">Best Game or Toy<br>파이널리스트<br>XR Reality World</p>
+        </div>
+
+        <div class="award-item">
+          <p class="award-year">2024</p>
+          <p class="award-title">PICO Store 유료 1위</p>
+          <p class="award-desc">신규 2위 달성 후 1위<br>PICO Ultra Showcase 선정<br>Vivarium</p>
+        </div>
+
+        <div class="award-item">
+          <p class="award-year">2024</p>
+          <p class="award-title">Meta Store 4.6 ★</p>
+          <p class="award-desc">메타 퀘스트 스토어<br>유저 평점 4.6 / 5.0<br>Vivarium</p>
         </div>
 
       </div>
@@ -218,7 +331,7 @@
   <footer>
     <div class="wrapper">
       <span>© 2025 김선민</span>
-      <span>Built with HTML & CSS</span>
+      <span>Unity Client Developer</span>
     </div>
   </footer>
 
@@ -230,7 +343,7 @@
         <h2 id="panelTitle"></h2>
         <button class="panel-close" id="panelClose" aria-label="닫기">✕</button>
       </div>
-      <div class="panel-thumb"></div>
+      <div class="panel-gallery" id="panelGallery"></div>
       <div class="panel-body">
         <p id="panelDesc"></p>
         <div class="panel-tags" id="panelTags"></div>

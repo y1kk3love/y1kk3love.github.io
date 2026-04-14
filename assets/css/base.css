@@ -1,25 +1,28 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #f8f7f4;
+  --bg: #faf8f5;
   --surface: #ffffff;
-  --surface-2: #f0eee9;
-  --border: #e0ddd7;
-  --text: #1a1918;
-  --muted: #8a8680;
-  --accent: #3d2fd4;
-  --accent-dim: rgba(61, 47, 212, 0.06);
-  --accent-border: rgba(61, 47, 212, 0.22);
-  --gold: #c9a84c;
-  --gold-dim: rgba(201, 168, 76, 0.08);
+  --surface-2: #f2efe9;
+  --border: #e5dfd8;
+  --text: #1c1816;
+  --muted: #8c8078;
+  --accent: #c4673a;
+  --accent-dim: rgba(196, 103, 58, 0.07);
+  --accent-border: rgba(196, 103, 58, 0.22);
+  --gold: #e8a87c;
+  --gold-dim: rgba(232, 168, 124, 0.10);
   --font-display: 'Syne', sans-serif;
   --font-mono: 'DM Mono', monospace;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
 
 body {
-  background: var(--bg);
+  background: transparent;
   color: var(--text);
   font-family: var(--font-mono);
   font-weight: 300;
@@ -28,13 +31,67 @@ body {
   min-height: 100vh;
 }
 
+/* ── Blob Background ── */
+.blob-field {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.blob-1 {
+  width: 650px;
+  height: 650px;
+  top: -150px;
+  right: -150px;
+  background: radial-gradient(circle at center, #f5c4a0 0%, #e8907a 70%);
+  opacity: 0.38;
+  animation: blobDrift 10s ease-in-out infinite alternate;
+}
+
+.blob-2 {
+  width: 520px;
+  height: 520px;
+  bottom: 5%;
+  left: -120px;
+  background: radial-gradient(circle at center, #eec4d8 0%, #d4a0bc 70%);
+  opacity: 0.28;
+  animation: blobDrift 13s ease-in-out infinite alternate-reverse;
+}
+
+.blob-3 {
+  width: 380px;
+  height: 380px;
+  top: 42%;
+  right: 12%;
+  background: radial-gradient(circle at center, #f5e4b0 0%, #e8cc78 70%);
+  opacity: 0.22;
+  animation: blobDrift 9s ease-in-out infinite alternate;
+  animation-delay: -4s;
+}
+
+@keyframes blobDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(24px, -28px) scale(1.06); }
+}
+
+/* ── Layout ── */
 .wrapper {
-  max-width: 920px;
+  max-width: 940px;
   margin: 0 auto;
   padding: 0 40px;
 }
 
 section {
+  position: relative;
+  z-index: 1;
   padding: 104px 0;
   border-top: 1px solid var(--border);
 }

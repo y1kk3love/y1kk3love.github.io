@@ -4,6 +4,12 @@
 
 ---
 
+### [005] 2026-04-14 — About 섹션 재구성
+- about role: "Unity · Game · XR · VR · MR" → "Unity · Game · XR"
+- 캐러셀: 2열 사이드 컬럼 → 1열 배경 스트립 (상단~Sunmin KIM 레벨, 좌측 그라디언트 마스크)
+- 스포트라이트 scale/brightness 효과 제거 (carousel-spotlight.js 비활성화)
+- about-inner: 2열 그리드 → 단일 컬럼
+
 ### [004] 2026-04-14 — Project 섹션 추가
 - `project.css`: 4열 스와이프 그리드, 카드 스타일, 모달 오버레이 (갤러리+정보 패널)
 - `project.js`: 6개 프로젝트 데이터, 그리드 렌더, 캐러셀 화살표, 모달 (이미지/영상 슬라이더 + 키보드/터치 스와이프)

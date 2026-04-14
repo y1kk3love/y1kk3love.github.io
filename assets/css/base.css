@@ -1,0 +1,58 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f8f7f4;
+  --surface: #ffffff;
+  --surface-2: #f0eee9;
+  --border: #e0ddd7;
+  --text: #1a1918;
+  --muted: #8a8680;
+  --accent: #3d2fd4;
+  --accent-dim: rgba(61, 47, 212, 0.06);
+  --accent-border: rgba(61, 47, 212, 0.22);
+  --gold: #c9a84c;
+  --gold-dim: rgba(201, 168, 76, 0.08);
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+.wrapper {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+section {
+  padding: 104px 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 5vw, 48px);
+  letter-spacing: -1.5px;
+  color: var(--text);
+  margin-bottom: 56px;
+}

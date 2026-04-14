@@ -16,10 +16,10 @@
         'META Quest 2 / Pro / 3 멀티 디바이스 대응',
       ],
       media: [
-        { type: 'img', src: 'assets/images/dopamino/dopamino-1.jpg' },
+        { type: 'img', src: 'assets/images/dopamino/dopamino-main.webp' },
         { type: 'img', src: 'assets/images/dopamino/dopamino-2.jpg' },
       ],
-      thumb: 'assets/images/dopamino/dopamino-1.jpg',
+      thumb: 'assets/images/dopamino/dopamino-main.webp',
     },
     {
       id: 'vivarium',

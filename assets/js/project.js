@@ -49,7 +49,7 @@
         { type: 'img', src: 'assets/images/vivarium/vivarium-rank.png' },
         { type: 'img', src: 'assets/images/vivarium/vivarium-rating.png' },
       ],
-      thumb: 'assets/images/vivarium/vivarium-1.jpg',
+      thumb: 'assets/images/vivarium/vivarium-main.png',
     },
     {
       id: 'twinworld',
@@ -74,7 +74,7 @@
         { type: 'img', src: 'assets/images/twinworld/twinworld-4.png' },
         { type: 'img', src: 'assets/images/twinworld/twinworld-5.png' },
       ],
-      thumb: 'assets/images/twinworld/twinworld-1.webp',
+      thumb: 'assets/images/twinworld/twinworld-main.png',
     },
     {
       id: 'kiro',

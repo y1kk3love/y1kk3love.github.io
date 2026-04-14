@@ -4,6 +4,12 @@
 
 ---
 
+### [011] 2026-04-14 — Contact 섹션 및 Footer 추가
+- #contact: 이메일·GitHub·LinkedIn 링크 카드 (hover 애니메이션, scroll reveal)
+- 개인 정보: b. 1998 · Seoul, Korea + "함께 만들고 싶은 게 있다면 편하게 연락 주세요."
+- footer: © 2026 Sunmin KIM 카피라이트
+- contact.css, footer.css 신규 작성
+
 ### [010] 2026-04-14 — 커리어 dot 정렬·회사명 수정·스킬칩 정리·빵빵하게 추가
 - career.css: 타임라인 dot left 보정 (-26px→-23px, mobile -22px→-19px)
 - index.html: (주)스페이스아웃게임즈 회사명 수정, about-role "XR (VR/AR)"로 변경

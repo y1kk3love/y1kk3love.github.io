@@ -9,9 +9,13 @@
 }
 
 .about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+  width: 100%;
   position: relative;
   z-index: 1;
-  max-width: 560px;
 }
 
 /* ── Background Carousel ── */
@@ -130,7 +134,59 @@
 .about-role  { opacity: 0; animation: fadeUp 0.6s ease 0.35s forwards; }
 .about-bio   { opacity: 0; animation: fadeUp 0.6s ease 0.45s forwards; }
 
+/* ── Skills (right column) ── */
+.about-right {
+  padding-top: 8px;
+}
+
+.skills-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.skill-group {}
+
+.skill-category {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.6;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-chip {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  background: var(--surface);
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.skill-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.skill-chip.highlight {
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+}
+
 @media (max-width: 768px) {
+  .about-inner { grid-template-columns: 1fr; gap: 48px; }
   .about-bg-carousel { height: 320px; }
   .about-bg-carousel::before {
     background: linear-gradient(to right, var(--bg) 5%, transparent 45%);

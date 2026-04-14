@@ -4,6 +4,9 @@
 
 ---
 
+### [012] 2026-04-14 — 네비 로고 및 탭 타이틀 변경
+- title, nav-logo: "Sunmin KIM — Unity Client Developer" → "Sunmin | Unity Client Dev"
+
 ### [011] 2026-04-14 — Contact 섹션 및 Footer 추가
 - #contact: 이메일·GitHub·LinkedIn 링크 카드 (hover 애니메이션, scroll reveal)
 - 개인 정보: b. 1998 · Seoul, Korea + "함께 만들고 싶은 게 있다면 편하게 연락 주세요."

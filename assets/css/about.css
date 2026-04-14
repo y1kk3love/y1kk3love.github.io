@@ -5,6 +5,25 @@
   align-items: center;
 }
 
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
+}
+
+.about-left {}
+
+.about-right {
+  /* 이미지/영상 영역 — 추후 추가 */
+}
+
+@media (max-width: 768px) {
+  .about-inner { grid-template-columns: 1fr; }
+  .about-right { display: none; }
+}
+
 .about-label {
   font-size: 11px;
   letter-spacing: 0.2em;

@@ -90,13 +90,13 @@
         '1280×800 영상 기반 실시간 이미지 프로세싱',
       ],
       media: [
-        { type: 'img', src: 'assets/images/kiro/kiro-1.png' },
         { type: 'img', src: 'assets/images/kiro/kiro-2.png' },
         { type: 'img', src: 'assets/images/kiro/kiro-3.png' },
-        { type: 'img', src: 'assets/images/kiro/kiro-4.png' },
         { type: 'img', src: 'assets/images/kiro/kiro-5.png' },
+        { type: 'img', src: 'assets/images/kiro/kiro-mark.png' },
+        { type: 'img', src: 'assets/images/kiro/kiro-report.png' },
       ],
-      thumb: 'assets/images/kiro/kiro-1.png',
+      thumb: 'assets/images/kiro/kiro-2.png',
     },
     {
       id: 'lidar',
@@ -113,17 +113,16 @@
         '노이즈 맵 기반 실제 LiDAR 오차 모사',
       ],
       media: [
-        { type: 'placeholder', icon: '🚗', label: '3D LiDAR Sim' },
+        { type: 'img', src: 'assets/images/lidar/lidar-1.png' },
+        { type: 'img', src: 'assets/images/lidar/lidar-2.png' },
       ],
-      thumb: null,
-      thumbIcon: '🚗',
-      thumbBg: 'linear-gradient(135deg, #1a1714 0%, #2d2620 100%)',
+      thumb: 'assets/images/lidar/lidar-1.png',
     },
     {
       id: 'omok',
       tag: 'Paper · 학술대회',
       name: '준학습 기반 오목 AI',
-      desc: '유전자 알고리즘의 확률 맵과 실제 게임 데이터에서 추출한 확률 맵을 병합한 준학습(Semi-Learning) 기반 오목 AI. 순수 휴리스틱의 예측 가능한 연산량을 유지하면서 실전 데이터로 점진적 강화.',
+      desc: '유전자 알고리즘의 확률 맵과 실제 게임 데이터에서 추출한 확률 맵을 병합한 준학습(Semi-Learning) 기반 오목 AI.',
       period: '2021.12 ~ 2022.05 · 개인 연구',
       tech: ['C++', 'OpenGL', 'Python', 'Genetic Algorithm', 'Game AI', 'Heuristic'],
       achievements: [
@@ -133,119 +132,178 @@
         'C++ OpenGL 2D 게임 엔진 직접 구현',
       ],
       media: [
-        { type: 'placeholder', icon: '⚫', label: '오목 AI' },
+        { type: 'img', src: 'assets/images/omok/omok-1.png' },
+        { type: 'img', src: 'assets/images/omok/omok-2.png' },
       ],
-      thumb: null,
-      thumbIcon: '⚫',
-      thumbBg: 'linear-gradient(135deg, #f7f4ef 0%, #e8e2d9 100%)',
+      thumb: 'assets/images/omok/omok-1.png',
+    },
+    {
+      id: 'hotel',
+      tag: 'Game · Capstone',
+      name: '호텔 마블러스',
+      desc: '대학교 캡스톤 경진대회 제출작. 호텔 경영 시뮬레이션 게임으로 카툰 렌더링과 A* 경로탐색 NPC를 구현.',
+      period: '2021 · 캡스톤 경진대회',
+      tech: ['Unity', 'C#', 'A* Pathfinding', 'Cartoon Shader', 'CG/HLSL'],
+      achievements: [
+        '캡스톤 경진대회 출품',
+        'A* 알고리즘 기반 NPC 경로탐색 구현',
+        '커스텀 카툰 쉐이더 직접 제작 (CG/HLSL)',
+      ],
+      media: [
+        { type: 'img', src: 'assets/images/hotel/hotel-1.png' },
+        { type: 'img', src: 'assets/images/hotel/hotel-2.png' },
+        { type: 'img', src: 'assets/images/hotel/hotel-3.png' },
+        { type: 'img', src: 'assets/images/hotel/hotel-4.png' },
+        { type: 'img', src: 'assets/images/hotel/hotel-5.png' },
+      ],
+      thumb: 'assets/images/hotel/hotel-1.png',
     },
   ];
 
-  /* ── 그리드 렌더 ── */
-  function buildGrid() {
-    var grid = document.getElementById('proj-grid');
-    if (!grid) return;
+  var ITEMS_PER_PAGE = 4;
+  var currentPage = 0;
+  var totalPages = Math.ceil(PROJECTS.length / ITEMS_PER_PAGE);
 
-    PROJECTS.forEach(function (p, i) {
-      var card = document.createElement('div');
-      card.className = 'proj-card reveal';
-      card.dataset.idx = i;
+  /* ── 카드 생성 ── */
+  function buildCard(p, idx) {
+    var card = document.createElement('div');
+    card.className = 'proj-card';
 
-      var thumbHtml;
-      if (p.thumb) {
-        thumbHtml = '<img class="proj-thumb" src="' + p.thumb + '" alt="' + p.name + '" loading="lazy">';
-      } else {
-        thumbHtml = '<div class="proj-thumb-placeholder" style="background:' + p.thumbBg + '">'
-          + '<span>' + p.thumbIcon + '</span></div>';
+    var thumbHtml;
+    if (p.thumb) {
+      thumbHtml = '<img class="proj-thumb" src="' + p.thumb + '" alt="' + p.name + '" loading="lazy">';
+    } else {
+      thumbHtml = '<div class="proj-thumb-placeholder" style="background:' + p.thumbBg + '">'
+        + '<span>' + p.thumbIcon + '</span></div>';
+    }
+
+    card.innerHTML = thumbHtml
+      + '<div class="proj-card-body">'
+      +   '<p class="proj-card-tag">' + p.tag + '</p>'
+      +   '<p class="proj-card-name">' + p.name + '</p>'
+      +   '<p class="proj-card-desc">' + p.desc + '</p>'
+      + '</div>';
+
+    card.addEventListener('click', (function(i){ return function(){ openModal(i); }; })(idx));
+    return card;
+  }
+
+  /* ── 페이지 슬라이더 빌드 ── */
+  function buildSlider() {
+    var track = document.getElementById('proj-track');
+    var dotsWrap = document.getElementById('proj-page-dots');
+    if (!track) return;
+
+    for (var p = 0; p < totalPages; p++) {
+      var page = document.createElement('div');
+      page.className = 'proj-page';
+
+      var grid = document.createElement('div');
+      grid.className = 'project-grid';
+
+      var start = p * ITEMS_PER_PAGE;
+      var end = Math.min(start + ITEMS_PER_PAGE, PROJECTS.length);
+      for (var i = start; i < end; i++) {
+        grid.appendChild(buildCard(PROJECTS[i], i));
       }
 
-      card.innerHTML = thumbHtml
-        + '<div class="proj-card-body">'
-        +   '<p class="proj-card-tag">' + p.tag + '</p>'
-        +   '<p class="proj-card-name">' + p.name + '</p>'
-        +   '<p class="proj-card-desc">' + p.desc + '</p>'
-        + '</div>';
+      page.appendChild(grid);
+      track.appendChild(page);
 
-      card.addEventListener('click', function () { openModal(i); });
-      grid.appendChild(card);
-    });
-
-    // reveal 등록
-    if (window._revealObserver) {
-      grid.querySelectorAll('.reveal').forEach(function (el) {
-        window._revealObserver.observe(el);
-      });
+      // 페이지 도트
+      var dot = document.createElement('div');
+      dot.className = 'page-dot' + (p === 0 ? ' active' : '');
+      (function(pi){ dot.addEventListener('click', function(){ goPage(pi); }); })(p);
+      dotsWrap.appendChild(dot);
     }
+
+    updateNavBtns();
+  }
+
+  /* ── 페이지 이동 ── */
+  function goPage(idx) {
+    if (idx < 0 || idx >= totalPages) return;
+    var track = document.getElementById('proj-track');
+    var dots  = document.getElementById('proj-page-dots').querySelectorAll('.page-dot');
+
+    dots[currentPage].classList.remove('active');
+    currentPage = idx;
+    dots[currentPage].classList.add('active');
+    track.style.transform = 'translateX(-' + (currentPage * 100) + '%)';
+    updateNavBtns();
+  }
+
+  function updateNavBtns() {
+    var btnPrev = document.getElementById('proj-prev');
+    var btnNext = document.getElementById('proj-next');
+    if (btnPrev) btnPrev.disabled = currentPage === 0;
+    if (btnNext) btnNext.disabled = currentPage >= totalPages - 1;
+  }
+
+  /* ── 슬라이더 터치 스와이프 ── */
+  function setupSliderSwipe() {
+    var wrap = document.querySelector('.proj-slider-wrap');
+    if (!wrap) return;
+    var startX = 0;
+    wrap.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive: true});
+    wrap.addEventListener('touchend', function(e){
+      var dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 50) goPage(currentPage + (dx < 0 ? 1 : -1));
+    });
   }
 
   /* ── 모달 ── */
   var currentSlide = 0;
-  var currentProject = null;
   var totalSlides = 0;
 
   function openModal(idx) {
     var p = PROJECTS[idx];
-    currentProject = p;
     currentSlide = 0;
     totalSlides = p.media.length;
 
-    var backdrop = document.getElementById('proj-modal-backdrop');
-    var info = document.getElementById('modal-info');
-
-    // 갤러리 빌드
     buildGallery(p);
 
-    // 정보 빌드
-    info.innerHTML =
+    document.getElementById('modal-info').innerHTML =
       '<p class="modal-tag">' + p.tag + '</p>'
       + '<p class="modal-title">' + p.name + '</p>'
       + '<p class="modal-period">' + p.period + '</p>'
       + '<p class="modal-desc">' + p.desc + '</p>'
-      + '<div>'
-      +   '<p class="modal-section-label">Tech Stack</p>'
-      +   '<div class="modal-tech">' + p.tech.map(function(t){ return '<span class="tech-chip">'+t+'</span>'; }).join('') + '</div>'
-      + '</div>'
-      + '<div>'
-      +   '<p class="modal-section-label">Achievements</p>'
-      +   '<ul class="modal-achievements">' + p.achievements.map(function(a){ return '<li>'+a+'</li>'; }).join('') + '</ul>'
-      + '</div>';
+      + '<div><p class="modal-section-label">Tech Stack</p>'
+      +   '<div class="modal-tech">' + p.tech.map(function(t){ return '<span class="tech-chip">'+t+'</span>'; }).join('') + '</div></div>'
+      + '<div><p class="modal-section-label">Achievements</p>'
+      +   '<ul class="modal-achievements">' + p.achievements.map(function(a){ return '<li>'+a+'</li>'; }).join('') + '</ul></div>';
 
-    backdrop.classList.add('open');
+    document.getElementById('proj-modal-backdrop').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 
   function buildGallery(p) {
-    var slidesEl = document.getElementById('gallery-slides'); // prev/next/dots 건드리지 않음
-    var dotsEl = document.getElementById('gallery-dots');
+    var slidesEl = document.getElementById('gallery-slides');
+    var dotsEl   = document.getElementById('gallery-dots');
     slidesEl.innerHTML = '';
-    dotsEl.innerHTML = '';
+    dotsEl.innerHTML   = '';
 
-    p.media.forEach(function (m, i) {
+    p.media.forEach(function(m, i) {
       var slide = document.createElement('div');
       slide.className = 'gallery-slide' + (i === 0 ? ' active' : '');
 
       if (m.type === 'img') {
         var img = document.createElement('img');
-        img.src = m.src;
-        img.alt = p.name;
+        img.src = m.src; img.alt = p.name;
         slide.appendChild(img);
       } else if (m.type === 'video') {
         var vid = document.createElement('video');
-        vid.src = m.src;
-        vid.controls = true;
-        vid.muted = true;
-        vid.loop = true;
+        vid.src = m.src; vid.controls = true; vid.muted = true; vid.loop = true;
         vid.style.cssText = 'width:100%;height:100%;object-fit:contain;';
         slide.appendChild(vid);
       } else {
         slide.innerHTML = '<div class="gallery-slide-placeholder"><span style="font-size:56px">' + m.icon + '</span></div>';
       }
-
       slidesEl.appendChild(slide);
 
       var dot = document.createElement('div');
       dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
-      dot.addEventListener('click', function () { goSlide(i); });
+      (function(di){ dot.addEventListener('click', function(){ goSlide(di); }); })(i);
       dotsEl.appendChild(dot);
     });
   }
@@ -253,67 +311,55 @@
   function goSlide(idx) {
     if (idx < 0 || idx >= totalSlides) return;
     var slides = document.getElementById('gallery-slides').querySelectorAll('.gallery-slide');
-    var dots = document.getElementById('gallery-dots').querySelectorAll('.gallery-dot');
-
-    // 이전 비디오 정지
+    var dots   = document.getElementById('gallery-dots').querySelectorAll('.gallery-dot');
     var prevVid = slides[currentSlide].querySelector('video');
     if (prevVid) prevVid.pause();
-
     slides[currentSlide].classList.remove('active');
     dots[currentSlide].classList.remove('active');
     currentSlide = idx;
     slides[currentSlide].classList.add('active');
     dots[currentSlide].classList.add('active');
-
-    // 새 슬라이드 비디오 자동재생
     var newVid = slides[currentSlide].querySelector('video');
     if (newVid) newVid.play().catch(function(){});
   }
 
   function closeModal() {
-    var backdrop = document.getElementById('proj-modal-backdrop');
-    backdrop.classList.remove('open');
+    document.getElementById('proj-modal-backdrop').classList.remove('open');
     document.body.style.overflow = '';
-
-    // 모든 비디오 정지
-    backdrop.querySelectorAll('video').forEach(function(v){ v.pause(); });
+    document.getElementById('proj-modal-backdrop').querySelectorAll('video').forEach(function(v){ v.pause(); });
   }
 
-  /* ── 이벤트 연결 ── */
   function setupModal() {
     var backdrop = document.getElementById('proj-modal-backdrop');
-    var btnClose = document.getElementById('modal-close');
-    var btnPrev = document.getElementById('gallery-prev');
-    var btnNext = document.getElementById('gallery-next');
-
-    btnClose.addEventListener('click', closeModal);
-    backdrop.addEventListener('click', function (e) {
-      if (e.target === backdrop) closeModal();
-    });
-
-    btnPrev.addEventListener('click', function () { goSlide(currentSlide - 1); });
-    btnNext.addEventListener('click', function () { goSlide(currentSlide + 1); });
-
-    document.addEventListener('keydown', function (e) {
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    backdrop.addEventListener('click', function(e){ if (e.target === backdrop) closeModal(); });
+    document.getElementById('gallery-prev').addEventListener('click', function(){ goSlide(currentSlide - 1); });
+    document.getElementById('gallery-next').addEventListener('click', function(){ goSlide(currentSlide + 1); });
+    document.addEventListener('keydown', function(e){
       if (!backdrop.classList.contains('open')) return;
       if (e.key === 'Escape') closeModal();
-      if (e.key === 'ArrowLeft') goSlide(currentSlide - 1);
+      if (e.key === 'ArrowLeft')  goSlide(currentSlide - 1);
       if (e.key === 'ArrowRight') goSlide(currentSlide + 1);
     });
-
-    // 터치 스와이프
     var touchStartX = 0;
     var gallery = document.getElementById('modal-gallery');
-    gallery.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; });
-    gallery.addEventListener('touchend', function (e) {
+    gallery.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+    gallery.addEventListener('touchend', function(e){
       var dx = e.changedTouches[0].clientX - touchStartX;
       if (Math.abs(dx) > 40) goSlide(currentSlide + (dx < 0 ? 1 : -1));
     });
   }
 
+  function setupSliderNav() {
+    document.getElementById('proj-prev').addEventListener('click', function(){ goPage(currentPage - 1); });
+    document.getElementById('proj-next').addEventListener('click', function(){ goPage(currentPage + 1); });
+  }
+
   /* ── init ── */
-  document.addEventListener('DOMContentLoaded', function () {
-    buildGrid();
+  document.addEventListener('DOMContentLoaded', function() {
+    buildSlider();
+    setupSliderNav();
+    setupSliderSwipe();
     setupModal();
   });
 

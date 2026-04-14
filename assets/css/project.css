@@ -23,11 +23,61 @@
   flex-shrink: 0;
 }
 
-/* ── 2×2 Grid ── */
+/* ── Slider ── */
+.proj-slider-wrap {
+  overflow: hidden;
+}
+
+.proj-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.proj-page {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* ── 2×2 Grid (per page) ── */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+}
+
+/* ── Slider Nav ── */
+.proj-slider-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.proj-page-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.page-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.page-dot.active {
+  background: var(--accent);
+  transform: scale(1.35);
+}
+
+.proj-nav-btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+  pointer-events: none;
 }
 
 /* ── Grid Card ── */
@@ -373,6 +423,7 @@
 @media (max-width: 768px) {
   .project-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .proj-modal {

@@ -47,7 +47,7 @@
 .about-name {
   font-family: var(--font);
   font-weight: 800;
-  font-size: clamp(56px, 9vw, 112px);
+  font-size: clamp(44px, 7vw, 88px);
   line-height: 0.95;
   letter-spacing: -3px;
   color: var(--text);

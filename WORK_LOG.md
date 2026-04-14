@@ -4,6 +4,10 @@
 
 ---
 
+### [008] 2026-04-14 — 스크롤 reveal 반복 애니메이션
+- scroll-reveal.js: unobserve 제거, 뷰포트 이탈 시 .visible 제거
+- 스크롤 올리고 내릴 때마다 애니메이션 반복 재생
+
 ### [007] 2026-04-14 — 모달 버그 수정 · 2×2 그리드 · 커리어 정리
 - 모달 재열기 버그: gallery-slides 컨테이너 분리 (galleryEl.innerHTML=''가 prev/next/dots 삭제하던 문제)
 - 프로젝트 그리드: 1×4 가로 스크롤 → 2×2 정적 그리드

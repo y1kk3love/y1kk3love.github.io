@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/css/nav.css" />
   <link rel="stylesheet" href="assets/css/about.css" />
   <link rel="stylesheet" href="assets/css/career.css" />
+  <link rel="stylesheet" href="assets/css/project.css" />
 </head>
 <body>
 
@@ -157,7 +158,45 @@
     </div>
   </section>
 
+  <!-- ── Project ── -->
+  <section id="project">
+    <div class="wrapper">
+      <p class="project-heading">Project</p>
+
+      <div class="project-carousel-wrap">
+        <div class="project-grid" id="proj-grid">
+          <!-- JS로 렌더 -->
+        </div>
+        <div class="proj-nav">
+          <button class="proj-nav-btn" id="proj-prev" aria-label="이전">&#8592;</button>
+          <button class="proj-nav-btn" id="proj-next" aria-label="다음">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Project Modal ── -->
+  <div class="proj-modal-backdrop" id="proj-modal-backdrop">
+    <div class="proj-modal">
+      <button class="modal-close" id="modal-close" aria-label="닫기">&#10005;</button>
+
+      <!-- 갤러리 -->
+      <div class="proj-modal-gallery" id="modal-gallery">
+        <!-- JS로 렌더 -->
+        <button class="gallery-btn prev" id="gallery-prev">&#8592;</button>
+        <button class="gallery-btn next" id="gallery-next">&#8594;</button>
+        <div class="gallery-dots" id="gallery-dots"></div>
+      </div>
+
+      <!-- 정보 -->
+      <div class="proj-modal-info" id="modal-info">
+        <!-- JS로 렌더 -->
+      </div>
+    </div>
+  </div>
+
   <script src="assets/js/scroll-reveal.js"></script>
   <script src="assets/js/carousel-spotlight.js"></script>
+  <script src="assets/js/project.js"></script>
 </body>
 </html>

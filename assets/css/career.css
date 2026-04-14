@@ -52,11 +52,11 @@
   padding-bottom: 0;
 }
 
-/* 타임라인 도트 */
+/* 타임라인 도트 — 선(left:3px)에 중앙 정렬: 22px padding - 23px + 4px(반지름) = 3px */
 .career-item::before {
   content: '';
   position: absolute;
-  left: -26px;
+  left: -23px;
   top: 6px;
   width: 8px;
   height: 8px;
@@ -181,6 +181,6 @@
     gap: 10px;
   }
   .career-item::before {
-    left: -22px;
+    left: -19px; /* 18px padding - 19px + 4px = 3px */
   }
 }

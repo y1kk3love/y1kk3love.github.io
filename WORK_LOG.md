@@ -4,6 +4,14 @@
 
 ---
 
+### [010] 2026-04-14 — 커리어 dot 정렬·회사명 수정·스킬칩 정리·빵빵하게 추가
+- career.css: 타임라인 dot left 보정 (-26px→-23px, mobile -22px→-19px)
+- index.html: (주)스페이스아웃게임즈 회사명 수정, about-role "XR (VR/AR)"로 변경
+- index.html: XR Platform 칩 SDK 제거(META XR, PICO), MRTK 제거
+- index.html: Voxel Editor→Voxel, ARUCO 제거, OpenCV→OpenCV/OpenGL
+- project.js: 호텔마블러스 FSM·절차적맵생성·UGUI·1인개발 상세 추가
+- project.js: 빵빵하게 프로젝트 추가 (bbang-1~6, SNS로그인, CSV대화, 3매치퍼즐)
+
 ### [009] 2026-04-14 — 프로젝트 슬라이더 · 이미지 업데이트 · 호텔 마블러스 추가
 - 프로젝트 그리드: 4개 단위 페이지 슬라이더 (2×2, 화살표+도트+터치스와이프)
 - KIRO: 1·4번째 이미지 제거, 마크추적+보고서 이미지 추가

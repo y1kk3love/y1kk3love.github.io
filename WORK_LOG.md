@@ -4,6 +4,9 @@
 
 ---
 
+### [013] 2026-04-14 — Contact 태그라인 변경
+- "함께 만들고 싶은 게 있다면 편하게 연락 주세요." → "만들고 싶은 게 생기면 직접 부딪혀 보는 편입니다. 같이 부딪혀도 좋고요."
+
 ### [012] 2026-04-14 — 네비 로고 및 탭 타이틀 변경
 - title, nav-logo: "Sunmin KIM — Unity Client Developer" → "Sunmin | Unity Client Dev"
 

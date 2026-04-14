@@ -14,7 +14,7 @@ nav .wrapper {
 }
 
 .nav-logo {
-  font-family: var(--font-body);
+  font-family: var(--font);
   font-weight: 500;
   font-size: 15px;
   color: var(--text);

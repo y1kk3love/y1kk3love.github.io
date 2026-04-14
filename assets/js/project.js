@@ -178,31 +178,6 @@
     }
   }
 
-  /* ── 캐러셀 화살표 ── */
-  function setupNav() {
-    var grid = document.getElementById('proj-grid');
-    var btnPrev = document.getElementById('proj-prev');
-    var btnNext = document.getElementById('proj-next');
-    if (!grid || !btnPrev || !btnNext) return;
-
-    function scrollBy(dir) {
-      var cardW = grid.querySelector('.proj-card');
-      if (!cardW) return;
-      var step = (cardW.offsetWidth + 12) * 4; // 4칸
-      grid.scrollBy({ left: dir * step, behavior: 'smooth' });
-    }
-
-    btnPrev.addEventListener('click', function () { scrollBy(-1); });
-    btnNext.addEventListener('click', function () { scrollBy(1); });
-
-    grid.addEventListener('scroll', function () {
-      btnPrev.disabled = grid.scrollLeft <= 4;
-      btnNext.disabled = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4;
-    });
-
-    btnPrev.disabled = true;
-  }
-
   /* ── 모달 ── */
   var currentSlide = 0;
   var currentProject = null;
@@ -240,9 +215,9 @@
   }
 
   function buildGallery(p) {
-    var galleryEl = document.getElementById('modal-gallery');
+    var slidesEl = document.getElementById('gallery-slides'); // prev/next/dots 건드리지 않음
     var dotsEl = document.getElementById('gallery-dots');
-    galleryEl.innerHTML = '';
+    slidesEl.innerHTML = '';
     dotsEl.innerHTML = '';
 
     p.media.forEach(function (m, i) {
@@ -266,7 +241,7 @@
         slide.innerHTML = '<div class="gallery-slide-placeholder"><span style="font-size:56px">' + m.icon + '</span></div>';
       }
 
-      galleryEl.appendChild(slide);
+      slidesEl.appendChild(slide);
 
       var dot = document.createElement('div');
       dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
@@ -277,8 +252,7 @@
 
   function goSlide(idx) {
     if (idx < 0 || idx >= totalSlides) return;
-    var galleryEl = document.getElementById('modal-gallery');
-    var slides = galleryEl.querySelectorAll('.gallery-slide');
+    var slides = document.getElementById('gallery-slides').querySelectorAll('.gallery-slide');
     var dots = document.getElementById('gallery-dots').querySelectorAll('.gallery-dot');
 
     // 이전 비디오 정지
@@ -340,7 +314,6 @@
   /* ── init ── */
   document.addEventListener('DOMContentLoaded', function () {
     buildGrid();
-    setupNav();
     setupModal();
   });
 

@@ -23,24 +23,12 @@
   flex-shrink: 0;
 }
 
-/* ── Grid Carousel ── */
-.project-carousel-wrap {
-  position: relative;
-}
-
+/* ── 2×2 Grid ── */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(6, calc(25% - 9px));
-  gap: 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding-bottom: 4px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
-
-.project-grid::-webkit-scrollbar { display: none; }
 
 /* ── Grid Card ── */
 .proj-card {
@@ -224,6 +212,12 @@
   opacity: 0.3;
 }
 
+/* Slides container — fills gallery area, prev/next/dots sit above it */
+#gallery-slides {
+  position: absolute;
+  inset: 0;
+}
+
 /* Gallery nav */
 .gallery-btn {
   position: absolute;
@@ -378,7 +372,7 @@
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .project-grid {
-    grid-template-columns: repeat(6, calc(80% - 6px));
+    grid-template-columns: 1fr;
   }
 
   .proj-modal {

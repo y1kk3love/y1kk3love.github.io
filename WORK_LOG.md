@@ -4,6 +4,11 @@
 
 ---
 
+### [016] 2026-04-14 — 비바리움·트윈월드 썸네일 메인 이미지로 교체
+- vivarium thumb: vivarium-1.jpg → vivarium-main.png
+- twinworld thumb: twinworld-1.webp → twinworld-main.png
+- 갤러리 영상 우선순위는 기존과 동일 (영상이 첫 번째)
+
 ### [015] 2026-04-14 — 빵빵하게 기간 및 출처 추가
 - period: '개인 프로젝트' → '2020 · 대학 동아리'
 

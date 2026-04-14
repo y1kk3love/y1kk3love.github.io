@@ -166,7 +166,7 @@
       tag: 'Mobile Game',
       name: '빵빵하게',
       desc: 'Unity 기반 모바일 캐주얼 게임. SNS 소셜 로그인, CSV 기반 대화 진행 시스템, 3매치 퍼즐 등 핵심 클라이언트 기능을 1인으로 개발.',
-      period: '개인 프로젝트',
+      period: '2020 · 대학 동아리',
       tech: ['Unity', 'C#', 'UGUI', 'Firebase', 'SNS Login', 'CSV Parser', '3-Match Puzzle'],
       achievements: [
         '클라이언트 개발 1인',

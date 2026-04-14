@@ -13,7 +13,7 @@
   --gold: #e8a87c;
   --gold-dim: rgba(232, 168, 124, 0.10);
   --font-display: 'Syne', sans-serif;
-  --font-mono: 'DM Mono', monospace;
+  --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 html {
@@ -24,7 +24,7 @@ html {
 body {
   background: transparent;
   color: var(--text);
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-weight: 300;
   font-size: 14px;
   line-height: 1.7;

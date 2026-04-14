@@ -4,6 +4,11 @@
 
 ---
 
+### [006] 2026-04-14 — About 2열 복원 + 기술 스택 추가
+- about-inner: 2열 그리드 복원 (1fr 1fr, gap 72px, align-items: start)
+- 오른쪽 컬럼: 카테고리별 기술 스택 칩 (Engine, XR Platform, Rendering, Network, 3D/Tools)
+- 주요 기술에 highlight 스타일 적용 (Unity, C#, META XR SDK 등)
+
 ### [005] 2026-04-14 — About 섹션 재구성
 - about role: "Unity · Game · XR · VR · MR" → "Unity · Game · XR"
 - 캐러셀: 2열 사이드 컬럼 → 1열 배경 스트립 (상단~Sunmin KIM 레벨, 좌측 그라디언트 마스크)

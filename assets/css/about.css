@@ -25,23 +25,34 @@
   pointer-events: none;
 }
 
-/* 좌측 텍스트 영역은 배경색으로 가리고, 하단은 페이드 아웃 */
-.about-bg-carousel::after {
+/* 좌측 페이드 — 텍스트 영역 보호 */
+.about-bg-carousel::before {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to right, var(--bg) 0%, var(--bg) 28%, transparent 52%),
-    linear-gradient(to bottom, transparent 0%, transparent 62%, var(--bg) 100%);
+  background: linear-gradient(to right, var(--bg) 26%, transparent 50%);
   z-index: 1;
+  pointer-events: none;
+}
+
+/* 하단 페이드 */
+.about-bg-carousel::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  z-index: 1;
+  pointer-events: none;
 }
 
 .about-bg-track {
   display: flex;
+  flex-wrap: nowrap;
   gap: 10px;
-  width: max-content;
   height: 440px;
-  animation: scrollLeft 30s linear infinite;
+  width: max-content;
+  animation: scrollLeft 32s linear infinite;
   will-change: transform;
 }
 
@@ -51,7 +62,7 @@
   object-fit: cover;
   display: block;
   flex-shrink: 0;
-  opacity: 0.55;
+  opacity: 0.5;
 }
 
 @keyframes scrollLeft {
@@ -120,13 +131,10 @@
 .about-bio   { opacity: 0; animation: fadeUp 0.6s ease 0.45s forwards; }
 
 @media (max-width: 768px) {
-  .about-bg-carousel {
-    height: 320px;
-    opacity: 0.7;
+  .about-bg-carousel { height: 320px; }
+  .about-bg-carousel::before {
+    background: linear-gradient(to right, var(--bg) 5%, transparent 45%);
   }
-  .about-bg-carousel::after {
-    background:
-      linear-gradient(to right, var(--bg) 0%, var(--bg) 10%, transparent 50%),
-      linear-gradient(to bottom, transparent 0%, transparent 60%, var(--bg) 100%);
-  }
+  .about-bg-carousel::after { height: 120px; }
+  .about-bg-track img { height: 320px; width: 220px; }
 }

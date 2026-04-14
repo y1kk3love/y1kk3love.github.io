@@ -8,7 +8,7 @@
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 400;
-  margin-bottom: 72px;
+  margin-bottom: 56px;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -22,101 +22,141 @@
   flex-shrink: 0;
 }
 
+/* ── 타임라인 컨테이너 ── */
+.career-list {
+  position: relative;
+  padding-left: 22px;
+}
+
+/* 세로 연결선 */
+.career-list::before {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 8px;
+  bottom: 20px;
+  width: 1px;
+  background: var(--border);
+}
+
 /* ── 각 경력 항목 ── */
 .career-item {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 48px;
-  padding: 48px 0;
-  border-top: 1px solid var(--border);
+  grid-template-columns: 140px 1fr;
+  gap: 28px;
+  padding-bottom: 40px;
+  position: relative;
 }
 
-.career-item:first-child {
-  border-top: none;
+.career-item:last-child {
+  padding-bottom: 0;
+}
+
+/* 타임라인 도트 */
+.career-item::before {
+  content: '';
+  position: absolute;
+  left: -26px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  z-index: 1;
+}
+
+/* 재직중 아이템: 강조 도트 */
+.career-item:first-child::before {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--bg), 0 0 0 4.5px var(--accent);
+  width: 8px;
+  height: 8px;
 }
 
 /* 왼쪽: 기간 */
 .career-period {
-  padding-top: 4px;
+  padding-top: 2px;
 }
 
 .period-dates {
   display: block;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--muted);
   font-weight: 400;
   line-height: 1.6;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .period-duration {
   display: block;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--muted);
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
 .period-badge {
   display: inline-block;
-  margin-top: 10px;
-  font-size: 10px;
+  margin-top: 8px;
+  font-size: 9px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
   border: 1px solid var(--accent);
-  padding: 3px 10px;
+  padding: 2px 8px;
   border-radius: 20px;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 /* 오른쪽: 내용 */
 .career-company {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--text);
-  letter-spacing: -0.3px;
-  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+  margin-bottom: 2px;
 }
 
 .career-role {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--muted);
-  margin-bottom: 28px;
+  margin-bottom: 14px;
 }
 
 .career-project {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 24px 28px;
+  border-radius: 8px;
+  padding: 14px 18px;
 }
 
 .project-name {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--text);
-  margin-bottom: 6px;
+  margin-bottom: 3px;
 }
 
 .project-desc {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--muted);
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .project-achievements {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
 }
 
 .project-achievements li {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--muted);
-  padding-left: 16px;
+  padding-left: 14px;
   position: relative;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .project-achievements li::before {
@@ -124,17 +164,23 @@
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-size: 11px;
+  font-size: 10px;
 }
 
 /* ── 스크롤 reveal 스태거 ── */
 .career-item:nth-child(1) { transition-delay: 0s; }
-.career-item:nth-child(2) { transition-delay: 0.1s; }
-.career-item:nth-child(3) { transition-delay: 0.2s; }
+.career-item:nth-child(2) { transition-delay: 0.12s; }
+.career-item:nth-child(3) { transition-delay: 0.24s; }
 
 @media (max-width: 768px) {
+  .career-list {
+    padding-left: 18px;
+  }
   .career-item {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 10px;
+  }
+  .career-item::before {
+    left: -22px;
   }
 }

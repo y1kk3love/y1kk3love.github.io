@@ -90,13 +90,13 @@
         '1280×800 영상 기반 실시간 이미지 프로세싱',
       ],
       media: [
+        { type: 'img', src: 'assets/images/kiro/kiro-report.png' },
         { type: 'img', src: 'assets/images/kiro/kiro-2.png' },
         { type: 'img', src: 'assets/images/kiro/kiro-3.png' },
         { type: 'img', src: 'assets/images/kiro/kiro-5.png' },
         { type: 'img', src: 'assets/images/kiro/kiro-mark.png' },
-        { type: 'img', src: 'assets/images/kiro/kiro-report.png' },
       ],
-      thumb: 'assets/images/kiro/kiro-2.png',
+      thumb: 'assets/images/kiro/kiro-report.png',
     },
     {
       id: 'lidar',
@@ -132,10 +132,10 @@
         'C++ OpenGL 2D 게임 엔진 직접 구현',
       ],
       media: [
-        { type: 'img', src: 'assets/images/omok/omok-1.png' },
         { type: 'img', src: 'assets/images/omok/omok-2.png' },
+        { type: 'img', src: 'assets/images/omok/omok-1.png' },
       ],
-      thumb: 'assets/images/omok/omok-1.png',
+      thumb: 'assets/images/omok/omok-2.png',
     },
     {
       id: 'hotel',

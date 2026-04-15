@@ -19,4 +19,12 @@ Vivarium, Twinworld, Dopamino 등 META/PICO 기반 XR 프로젝트 경험을 담
 
 ## 기술 스택
 
-HTML · CSS · Vanilla JS · GitHub Pages
+**Engine** · Unity · C#  
+**XR** · META XR SDK · PICO SDK · XRI  
+**Rendering** · GPU Compute Shader  
+**Network** · Photon Fusion  
+**Tools** · Addressable · UniTask · GitHub Actions CI/CD · C++ · Python · OpenCV
+
+---
+
+*사이트: HTML · CSS · Vanilla JS · GitHub Pages*

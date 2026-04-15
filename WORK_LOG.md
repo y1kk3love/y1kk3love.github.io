@@ -4,6 +4,11 @@
 
 ---
 
+### [020] 2026-04-15 — Blog 탭 섹션 추가 및 폰트·색상 조정
+- Blog 섹션 추가 (Book Study / Knowledge / Interview 카드, y1kk3love GitHub 레포 연결)
+- blog.css 신규 생성
+- base.css: font-size 15px → 16px, font-weight 300 → 400, --muted #9a9189 → #6e6560
+
 ### [019] 2026-04-15 — README 기술 스택 수정
 - 사이트 기술 스택 → 경력 기준 기술 스택으로 교체 (Unity, META XR SDK 등)
 - 사이트 기술(HTML/CSS/JS)은 하단 이탤릭으로 분리

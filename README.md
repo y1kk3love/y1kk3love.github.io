@@ -1,6 +1,6 @@
 # 포트폴리오
 
-**[https://y1kk3love.github.io](https://y1kk3love.github.io)**
+**[🔗 페이지](https://y1kk3love.github.io)**
 
 Unity XR 클라이언트 개발자 김선민의 포트폴리오 사이트입니다.
 

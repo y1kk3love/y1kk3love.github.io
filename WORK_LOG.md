@@ -4,6 +4,13 @@
 
 ---
 
+### [023] 2026-10-07 — 디자인·콘텐츠 검토 (리포트만, 코드 변경 없음)
+- 기준: 국내 XR/게임사 채용 담당자. 1440/1280/820/390px 렌더링 + 코드 분석
+- 주요 지적: 첫 화면에 성과·연차 없음, Vivarium 대신 Dopamino가 1번, 모달에 스토어·논문 링크 및 팀 구성·담당 역할 없음
+- 성능: 첫 로드 22.4MB (배경 캐러셀 8.2MB, 썸네일 PNG 2장 8.7MB, 폰트 3.8MB)
+- 사용성·접근성: 카드 키보드 접근 불가, 모바일 내비 없음, 포인트 색 대비 3.6~3.9:1, 핵심 텍스트 9~12px
+- 표기 통일 필요: META→Meta, Hololens→HoloLens, UniRX→UniRx, ARUCO→ArUco, 회사명 표기
+
 ### [022] 2026-10-07 — 레거시 JS/CSS 파일 삭제
 - JS 삭제: data, overlay, slider, count-up, typing, scroll-progress, carousel-spotlight
 - CSS 삭제: hero, projects, overlay, awards, skills, animations, scroll-progress

@@ -4,6 +4,12 @@
 
 ---
 
+### [022] 2026-10-07 — 레거시 JS/CSS 파일 삭제
+- JS 삭제: data, overlay, slider, count-up, typing, scroll-progress, carousel-spotlight
+- CSS 삭제: hero, projects, overlay, awards, skills, animations, scroll-progress
+- index.html: carousel-spotlight 비활성화 주석 제거
+- CLAUDE.md: 레거시 파일 안내 → 새 파일 추가 시 index.html 등록 규칙으로 교체
+
 ### [021] 2026-10-07 — CLAUDE.md 코드베이스 가이드 추가
 - 기존 프로젝트 규칙 유지, 상단에 Claude Code 헤더 추가
 - 프로젝트 개요·로컬 확인 방법·구조(project.js 데이터 구조, scroll-reveal) 문서화

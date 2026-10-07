@@ -41,8 +41,8 @@ python3 -m http.server 8000   # http://localhost:8000
 - `assets/css/` — 섹션별 CSS 파일. 디자인 토큰(`--bg`, `--text`, `--muted`, `--accent` 등)과 `.wrapper`는 `base.css`의 `:root`에 있다. 폰트는 CDN의 Pretendard.
 - `assets/images/<project-id>/`, `assets/video/` — 프로젝트 미디어. 폴더명은 `PROJECTS[].id`와 맞춘다.
 
-### 주의: 로드되지 않는 레거시 파일
-`index.html`이 실제로 불러오는 것은 CSS 8개(base, nav, about, career, project, contact, footer, blog)와 JS 2개(`scroll-reveal.js`, `project.js`)뿐이다. 다음은 이전 디자인의 잔재로 **어디서도 로드되지 않는다**: `data.js`(별도의 구 `PROJECTS` 객체 — 수정해도 사이트에 반영 안 됨), `overlay.js`, `slider.js`, `count-up.js`, `typing.js`, `scroll-progress.js`, `carousel-spotlight.js`(의도적으로 비활성화), 그리고 `hero.css`, `projects.css`, `overlay.css`, `awards.css`, `skills.css`, `animations.css`, `scroll-progress.css`. 새 CSS/JS 파일을 만들면 `index.html`에 `<link>`/`<script>`를 직접 추가해야 한다.
+### 새 CSS/JS 파일 추가
+별도의 번들러가 없으므로 새 파일을 만들면 `index.html`에 `<link>`/`<script>`를 직접 추가해야 한다. `assets/` 안의 CSS/JS는 모두 `index.html`에서 로드되는 파일만 유지한다.
 
 ### About 배경 캐러셀
 `.about-bg-track`은 무한 루프를 위해 이미지 목록을 **두 번** 나열한다(“루프용 복제” 주석). 이미지를 추가/삭제할 때 양쪽을 동일하게 맞춘다.

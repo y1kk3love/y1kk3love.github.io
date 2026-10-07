@@ -4,6 +4,12 @@
 
 ---
 
+### [021] 2026-10-07 — CLAUDE.md 코드베이스 가이드 추가
+- 기존 프로젝트 규칙 유지, 상단에 Claude Code 헤더 추가
+- 프로젝트 개요·로컬 확인 방법·구조(project.js 데이터 구조, scroll-reveal) 문서화
+- 로드되지 않는 레거시 JS/CSS 파일 목록 및 About 캐러셀 복제 규칙 명시
+- 작업 로그 추가 위치·순번 규칙 보강
+
 ### [020] 2026-04-15 — Blog 탭 섹션 추가 및 폰트·색상 조정
 - Blog 섹션 추가 (Book Study / Knowledge / Interview 카드, y1kk3love GitHub 레포 연결)
 - blog.css 신규 생성
